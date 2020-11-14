@@ -31,7 +31,8 @@ public class TimeLineAddService implements Action {
 
 		if (rowcount > 0) {
 			msg = "글이 등록되었습니다.";
-			url = "index2.jsp";
+			url = "default.jsp";	// index2.jsp는 우리 프로젝트 파일에 없어서 에러남! 이걸로 바꿔야대 일단은
+									// 메인 페이지가 각자 달라서 통일해야한다.
 		} else {
 			msg = "글 등록이 실패하였습니다.";
 			url = "TimeLineWrite.tc";
