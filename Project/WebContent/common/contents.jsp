@@ -44,8 +44,9 @@
 			<div class="card">
 				<a href="./BoardList_Grammar.cate">
 					<div class="counter diary">
-						<h1>Grammar</h1>
-						<i class="fas fa-ellipsis-h"></i>
+						<p><i class="fas fa-spell-check"></i></p>
+						<h3>Grammar</h3>
+						<p>영어 문법 공부하기</p>
 					</div>
 				</a>
 			</div>
@@ -55,19 +56,21 @@
 			<div class="card">
 				<a href="./BoardList_Reading.cate">
 					<div class="counter certification">
-						<h1>Reading</h1>
-						<i class="fas fa-ellipsis-h"></i>
+						<p><i class="fas fa-book-reader"></i></p>
+						<h3>Reading</h3>
+						<p>영어 리빙 공부하기</p>
 					</div>
 				</a>
 			</div>
 		</div>
 
-		<div class="col-4 col-m-6 col-sm-6">
+		<div class="col-4 col-m-12 col-sm-12">
 			<div class="card">
 				<a href="./BoardList_Listening.cate">
 					<div class="counter qna">
-						<h1>Listening</h1>
-						<i class="fas fa-ellipsis-h"></i>
+						<p><i class="fas fa-comment-dots"></i></p>
+						<h3>Listening</h3>
+						<p>영어 발음 공부하기</p>
 					</div>
 				</a>
 			</div>
@@ -88,42 +91,42 @@
 
 				</div>
 				<div class="card-content">
-					<table>
-						<thead>
-							<tr>
-								<th>제목</th>
-								<th>작성자</th>
-								<th>작성일</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="board" items="${requestScope.boardlist}"
-								varStatus="status">
+					<div class="main-board ">
+						<table>
+							<thead>
 								<tr>
-									<td class="leftAlign">
-										<c:choose>
-											<c:when test="${board.depth != 0}">
-												<c:forEach var="depth" begin="0" end="${(board.depth)*2}">
-													&nbsp;
-												</c:forEach>
-													▶
-											</c:when>
-											<c:otherwise>
-													
-											</c:otherwise>
-										</c:choose>
-										<a href="./BoardDetailService.bo?num=${board.contentNumber}">
-											${board.contentTitle}
-										</a>
-									</td>
-									<td>${board.id}</td>
-									<td>${board.reportingDate}</td>
+									<th>제목</th>
+									<th>작성자</th>
+									<th>작성일</th>
 								</tr>
-							</c:forEach>
-
-
-						</tbody>
-					</table>
+							</thead>
+							<tbody>
+								<c:forEach var="board" items="${requestScope.boardlist}"
+									varStatus="status">
+									<tr>
+										<td class="leftAlign">
+											<c:choose>
+												<c:when test="${board.depth != 0}">
+													<c:forEach var="depth" begin="0" end="${(board.depth)*2}">
+														&nbsp;
+													</c:forEach>
+														▶
+												</c:when>
+												<c:otherwise>
+														
+												</c:otherwise>
+											</c:choose>
+											<a href="./BoardDetailService.bo?num=${board.contentNumber}">
+												${board.contentTitle}
+											</a>
+										</td>
+										<td>${board.id}</td>
+										<td>${board.reportingDate}</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -178,24 +181,38 @@
 		</div>
 		<!-- //통계 -->
 	</div>
-
-
-	<!-- 달력 -->
+	
 	<div class="row">
-	<div class="col-13 col-m-12 col-sm-12">
-		<div class="card">
-			<div class="card-header" >
-				<h1>
-					오늘의 단어퀴즈
-				</h1>
-				<i class="fas fa-ellipsis-h" ></i>
-				
+		<!-- 날씨 -->
+		<div class="col-4 col-m-12 col-sm-12">
+			<div class="card">
+				<div class="card-header">
+					<h1>날씨</h1>
+					<i class="fas fa-ellipsis-h"></i>
+				</div>
+	
+				<div class="card-content">
+				</div>
+				</div>
 			</div>
-			<div class="card-content">
-			<div id="game"></div>
+			<!-- //날씨 -->
+			
+			<!-- 오늘의 단어퀴즈 -->
+			<div class="col-8 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header" >
+						<h1>
+							오늘의 단어퀴즈
+						</h1>
+						<i class="fas fa-ellipsis-h" ></i>
+						
+					</div>
+					<div class="card-content">
+					<div id="game"></div>
+				</div>
+			</div>
 		</div>
+		<!-- //오늘의 단어퀴즈 -->
 	</div>
+	<!-- //컨텐츠 -->
 </div>
-	<!-- 달력 -->
-</div>
-<!-- //컨텐츠 -->

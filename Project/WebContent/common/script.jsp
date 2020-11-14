@@ -4,9 +4,8 @@
 <!-- 스크립트 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
-<!-- SideBar : 햄버거버튼 -->
+<!-- 햄버거 : SideBar.js -->
 <script src="assets/js/SideBar.js"></script>
-
 <c:choose>
 	<c:when test="${not empty sessionScope.userid}"><!-- 로그인 중 -->
 		<script src="assets/js/logOut.js"></script>
