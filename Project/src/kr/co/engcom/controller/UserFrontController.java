@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import kr.co.engcom.action.Action;
 import kr.co.engcom.action.ActionForward;
 import kr.co.engcom.service.LogInService;
+import kr.co.engcom.service.LogOutService;
 import kr.co.engcom.service.SignUpService;
 
 @WebServlet("*.go")
@@ -55,8 +56,8 @@ public class UserFrontController extends HttpServlet {
 			forward = action.execute(request, response);
 		
 		}else if (url_Command.equals("/LogOut.go")) {	// 로그아웃 시
-			forward = new ActionForward();
-			forward.setPath("/WEB-INF/views/logOut.jsp");
+			action = new LogOutService();
+			forward = action.execute(request, response);
 		}
 		
 		if (forward != null) {

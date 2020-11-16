@@ -6,7 +6,6 @@
 <head>
 	<jsp:include page="/common/head.jsp"></jsp:include>
 </head>
-
 <body class="wrap">
 		<jsp:include page="/common/top.jsp"></jsp:include>
 		<jsp:include page="/common/left.jsp"></jsp:include>

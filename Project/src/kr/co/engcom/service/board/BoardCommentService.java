@@ -54,9 +54,6 @@ public class BoardCommentService implements Action{
    }
 }
 
-
-
-
 /*
 public class BoardCommentService implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
