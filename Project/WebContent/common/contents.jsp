@@ -84,7 +84,7 @@
 		<div class="col-8 col-m-12 col-sm-12">
 			<div class="card">
 				<div class="card-header">
-					<h1>전체게시판</h1>
+					<h1><a href="./BoardList.bo">전체게시판</a></h1>
 					<a href="./BoardList.bo">
 						<i class="fas fa-ellipsis-h"></i>
 					</a>

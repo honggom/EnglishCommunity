@@ -127,6 +127,12 @@
 						<c:forEach var="cmt" items="${comment}">
 							<div>
 								<span class="comment-id">&nbsp;${cmt.id}</span>
+								<c:if test="${cmt.id == sessionScope.userid}">
+									<!-- 수정/삭제 버튼 -->
+								</c:if>
+								<c:if test="${cmt.id == 'admin'}">
+									<!-- 수정/삭제 버튼 -->
+								</c:if>
 								<span class="comment-date">${cmt.redate}</span>
 							</div>
 							
