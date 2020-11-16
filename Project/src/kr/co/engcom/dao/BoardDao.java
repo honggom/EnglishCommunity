@@ -31,7 +31,7 @@ public class BoardDao {
 		}
 	}
 	
-	
+	// SELECT count(*) FROM board WHERE boardname = 'Grammar';
 	// 글의 개수 구하기
 	// ListBoard.jsp
 	public int getListCount() {
@@ -55,7 +55,69 @@ public class BoardDao {
 		}
 		return rowcount;
 	}
-	
+	public int getGrammarListCount() {
+		// select count(*) from board
+		int rowcount = 0;
+		
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement("select count(*) from board WHERE boardname = 'Grammar'");
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				rowcount = rs.getInt(1);
+			}
+		}catch(Exception e) {
+			System.out.println("getListCount 에러: " + e.getMessage());
+		}finally {
+			DB_Close.close(rs);
+			DB_Close.close(pstmt);
+			DB_Close.close(conn);
+		}
+		return rowcount;
+	}
+	public int getReadingListCount() {
+		// select count(*) from board
+		int rowcount = 0;
+		
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement("select count(*) from board WHERE boardname = 'Reading'");
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				rowcount = rs.getInt(1);
+			}
+		}catch(Exception e) {
+			System.out.println("getListCount 에러: " + e.getMessage());
+		}finally {
+			DB_Close.close(rs);
+			DB_Close.close(pstmt);
+			DB_Close.close(conn);
+		}
+		return rowcount;
+	}
+	public int getListeningListCount() {
+		// select count(*) from board
+		int rowcount = 0;
+		
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement("select count(*) from board WHERE boardname = 'Listening'");
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				rowcount = rs.getInt(1);
+			}
+		}catch(Exception e) {
+			System.out.println("getListCount 에러: " + e.getMessage());
+		}finally {
+			DB_Close.close(rs);
+			DB_Close.close(pstmt);
+			DB_Close.close(conn);
+		}
+		return rowcount;
+	}
 	
 	// 글 목록 보기
 	// ListBoard.jsp

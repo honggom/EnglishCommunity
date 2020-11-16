@@ -34,7 +34,7 @@ public class CMBoardDAO {
 				num = 1; // 없으면 1
 
 			sql = "insert into CMBoard (CMBoardNumber, CMBoardId, CMBoardSubject,";
-			sql += "CMBoardFile, CMBoardAnswer, CMBoardDate) values(?,?,?,?,?,sysdate)";
+			sql += "CMBoardFile, CMBoardAnswer, CMBoardDate, ) values(?,?,?,?,?,sysdate,?)";
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, num);

@@ -24,6 +24,8 @@ public class GetMoreReplyServlet extends HttpServlet {
     }
     
     private void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	response.setContentType("text/html;charset=UTF-8");
+    	
     	int count = Integer.parseInt(request.getParameter("data"));
     	int CMBoardNumber = Integer.parseInt(request.getParameter("CMBoardNumber"));
     	
@@ -33,8 +35,14 @@ public class GetMoreReplyServlet extends HttpServlet {
     	List dto = null;
     	
     	dto = dao.getMoreCMReplyList(CMBoardNumber, count);
+    	
+    	
+    	
     	JSONArray jsonmember =  JSONArray.fromObject(dto);
+    	System.out.println("제이슨객체확인제이슨객체확");
     	System.out.println(jsonmember);
+    	System.out.println("제이슨객체확인제이슨객체확");
+    	
     	if(jsonmember!=null) {
     		//dto가 null이 아니면 객체가 있는 것이므로 true를 리턴 
     		out.print(jsonmember);

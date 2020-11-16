@@ -84,7 +84,7 @@
 		<div class="col-8 col-m-12 col-sm-12">
 			<div class="card">
 				<div class="card-header">
-					<h1><a href="./BoardList.bo">전체게시판</a></h1>
+					<h1>전체게시판</h1>
 					<a href="./BoardList.bo">
 						<i class="fas fa-ellipsis-h"></i>
 					</a>
@@ -126,7 +126,7 @@
 								</c:forEach>
 							</tbody>
 						</table>
-					</div>
+					</div> 
 				</div>
 			</div>
 		</div>
@@ -135,48 +135,7 @@
 		<!-- 통계 -->
 		<div class="col-4 col-m-12 col-sm-12">
 			<div class="card">
-				<div class="card-header">
-					<h1>통계</h1>
-					<i class="fas fa-ellipsis-h"></i>
-				</div>
-
-				<div class="card-content">
-					<div class="progress-wrapper">
-						<p>
-							독해 <span class="float-right">20%</span>
-						</p>
-						<div class="progress">
-							<div class="reading" style="width: 20%"></div>
-						</div>
-					</div>
-
-					<div class="progress-wrapper">
-						<p>
-							문법 <span class="float-right">60%</span>
-						</p>
-						<div class="progress">
-							<div class="grammar" style="width: 60%"></div>
-						</div>
-					</div>
-
-					<div class="progress-wrapper">
-						<p>
-							회화 <span class="float-right">40%</span>
-						</p>
-						<div class="progress">
-							<div class="conversation" style="width: 40%"></div>
-						</div>
-					</div>
-
-					<div class="progress-wrapper">
-						<p>
-							단어 <span class="float-right">50%</span>
-						</p>
-						<div class="progress">
-							<div class="word" style="width: 50%"></div>
-						</div>
-					</div>
-				</div>
+					<jsp:include page="/common/chart.jsp"></jsp:include>
 			</div>
 		</div>
 		<!-- //통계 -->

@@ -3,12 +3,15 @@ package kr.co.engcom.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import kr.co.engcom.dto.UserTable;
+import kr.co.engcom.utils.ConnectionHelper;
+import kr.co.engcom.utils.DB_Close;
 
 public class UserTableDao {
 	private Connection conn = null;
@@ -28,6 +31,38 @@ public class UserTableDao {
 			System.out.println("UserDAO JNDI 오류 : " + e.getMessage());
 		}
 	}
+	
+public int getCMUserListCount() {
+		
+		Connection conn = ConnectionHelper.getConnection("oracle"); // 객체 얻기
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		int x = 0;
+
+		try {
+			pstmt = conn.prepareStatement("select count(*) from usertable");
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				x = rs.getInt(1);
+			}
+		} catch (Exception ex) {
+			System.out.println("getListCount 에러: " + ex);
+		} finally {
+			if (rs != null)
+				DB_Close.close(rs);
+			if (pstmt != null)
+				DB_Close.close(pstmt);
+			if (conn != null)
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+				}
+		}
+		return x;
+	}
+	
 	
 	public UserTable isExist(String id) {
 		UserTable dto = null;

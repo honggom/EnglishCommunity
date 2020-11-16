@@ -23,11 +23,6 @@
 						<h1>전체 게시판</h1>
 						<i class="fas fa-ellipsis-h"></i>
 					</div>
-					<!-- 컨텐츠 검색 -->
-					<div class="card-content">
-					
-					</div>
-					<!-- //컨텐츠 검색 -->
 					<div class="card-content">
 						<table>
 							<thead>
